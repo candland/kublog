@@ -6,6 +6,10 @@ module Kublog
     def initialize(post=nil)
       @post = post
     end
+
+    def categories
+      @categories ||= Category.all
+    end
     
     def comment_count
       @comment_count ||= comments.count
