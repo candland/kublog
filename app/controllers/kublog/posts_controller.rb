@@ -11,6 +11,7 @@ module Kublog
         format.atom { render :layout => false, :content_type => 'text/xml' }
         format.rss  { render :layout => false, :content_type => 'text/xml' }
       end
+			render :layout => 'kublog/application'
     end
     
     def new
@@ -20,6 +21,7 @@ module Kublog
     def show
       post = Post.find(params[:id])
       @presenter = PostPresenter.new(post)
+			render :layout => 'kublog/application'
     end
     
     def create
