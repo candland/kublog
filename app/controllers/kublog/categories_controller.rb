@@ -10,9 +10,8 @@ module Kublog
       respond_to do |format|
         format.atom { render "/kublog/posts/index", :layout => false, :content_type => 'text/xml' }
         format.rss  { render "/kublog/posts/index", :layout => false, :content_type => 'text/xml' }
-        format.html { render "/kublog/posts/index" }
+        format.html { render "/kublog/posts/index", :layout => 'kublog/application' }
       end
-			render :layout => 'kublog/application'
     end
     
     def create
