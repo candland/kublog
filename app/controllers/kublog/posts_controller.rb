@@ -7,11 +7,10 @@ module Kublog
     def index
       @presenter = PostsPresenter.new
       respond_to do |format|
-        format.html { }
         format.atom { render :layout => false, :content_type => 'text/xml' }
         format.rss  { render :layout => false, :content_type => 'text/xml' }
+        format.html { render :layout => 'kublog/application' }
       end
-			render :layout => 'kublog/application'
     end
     
     def new
